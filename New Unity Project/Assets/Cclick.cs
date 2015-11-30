@@ -6,8 +6,8 @@ public class Cclick : MonoBehaviour {
 	// Use this for initialization
 	public int Patron=1;
 	public GameObject mon1, mon2, mon3 ;
-	public GameObject barra1;
-	Vector3 Vact, Vant;
+	public GameObject barra1, barra2 , guia1, guia2;
+	Vector3 Vact, Vant, aux;
 
 
 	void Start () {
@@ -16,6 +16,9 @@ public class Cclick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.touchCount > 0)
+			print(Input.touchCount);
+
 
 
 
@@ -25,10 +28,12 @@ public class Cclick : MonoBehaviour {
 
 			if(Vact.y<Vant.y)
 			{
-				Vector3 aux = barra1.transform.position;
+				aux = barra1.transform.position;
 				aux.z-=0.03f;
+				//z inicia en 1.5 y termina en -2 recuerda eso
 				barra1.transform.position = aux;
 			}
+
 			//this.Patron++;
 			//mon1.GetComponent<Moneda1> ().pressed = false;
 
