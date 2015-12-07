@@ -9,6 +9,8 @@ public class Cclick : MonoBehaviour {
 	public GameObject barra1, barra2 , guia1, guia2;
 	Vector3 Vact, Vant, aux;
 
+	public LineRenderer lineRender;
+	private int numberOfPoints = 0;
 
 	void Start () {
 		Screen.SetResolution (720, 1280, true);
@@ -23,19 +25,22 @@ public class Cclick : MonoBehaviour {
 
 
 		if (mon1.GetComponent<Moneda1> ().pressed == true && Patron == 1) {
-			Vant=Vact;
-			Vact = Input.mousePosition;
-
-			if(Vact.y<Vant.y)
-			{
-				aux = barra1.transform.position;
-				aux.z-=0.03f;
-				//z inicia en 1.5 y termina en -2 recuerda eso
-				barra1.transform.position = aux;
+			if (Input.GetKey (KeyCode.Mouse0)) {
+				numberOfPoints++;
+				lineRender.SetVertexCount (numberOfPoints);
+				Vector3 mousePos = new Vector3 (0, 0, 0);
+				mousePos = Input.mousePosition;
+				mousePos.z = 1.0f;
+				Vector3 worldPos = Camera.main.ScreenToWorldPoint (mousePos);
+				lineRender.SetPosition (numberOfPoints - 1, worldPos);
+			}else {
+				numberOfPoints = 0;
+				lineRender.SetVertexCount (0);
 			}
-
-			//this.Patron++;
-			//mon1.GetComponent<Moneda1> ().pressed = false;
+			if(mon2.GetComponent<Moneda2> ().pressed == true)
+			{
+				Debug.Log("se detecto");
+			}
 
 		} 
 		if (mon1.GetComponent<Moneda1> ().pressed == true && Patron != 1) {

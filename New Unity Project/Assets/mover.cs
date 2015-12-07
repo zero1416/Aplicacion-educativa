@@ -1,26 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Algo : MonoBehaviour {
+public class mover : MonoBehaviour {
 
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
-	int patron;
 
-	public GameObject nodo1, nodo2 , nodo3, nodo4, nodo5;
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution (720, 1280, true);
-		patron = 1;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		/*if (nodo1.GetComponent<Moneda1> ().pressed == true && patron == 1) {
+		Touch dedito= Input.GetTouch (0);
 
+		if (Input.touchCount == 1) {
+			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
+			transform.position=worlpos;
+		}
+
+	
+	}
+	void OnCollisionEnter (Collision col)
+	{
+		if(col.gameObject.name == "Moneda1")
+		{
 			if (Input.GetKey (KeyCode.Mouse0)) {
 				numberOfPoints++;
 				lineRender.SetVertexCount (numberOfPoints);
@@ -33,9 +40,10 @@ public class Algo : MonoBehaviour {
 				numberOfPoints = 0;
 				lineRender.SetVertexCount (0);
 			}
-		}*/
 
-
-	
+		}
+		if (col.gameObject.name == "Moneda2") {
+			Debug.Log(col.gameObject.name);
+		}
 	}
 }

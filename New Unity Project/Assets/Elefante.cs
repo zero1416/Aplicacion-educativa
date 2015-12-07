@@ -7,7 +7,6 @@ public class Elefante : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AudioSource elef = GetComponent<AudioSource> ();
 	
 	}
 	
