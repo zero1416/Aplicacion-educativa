@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Moneda1 : MonoBehaviour {
+public class Colision : MonoBehaviour {
 
 	// Use this for initialization
-	public bool pressed= false;
 	void Start () {
 	
 	}
@@ -13,10 +12,8 @@ public class Moneda1 : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnMouseDown()
-	{
-		pressed = true;
-		
-	}
 
+	void OnTriggerStay (Collider col) {
+		Debug.Log ("hola");
+	}
 }

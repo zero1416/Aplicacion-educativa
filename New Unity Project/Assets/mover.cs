@@ -5,11 +5,12 @@ public class mover : MonoBehaviour {
 
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
+	bool toca;
 
 
 	// Use this for initialization
 	void Start () {
-	
+		toca = false;
 	}
 	
 	// Update is called once per frame
@@ -21,13 +22,7 @@ public class mover : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
-
-	
-	}
-	void OnCollisionEnter (Collision col)
-	{
-		if(col.gameObject.name == "Moneda1")
-		{
+		if (toca == true) {
 			if (Input.GetKey (KeyCode.Mouse0)) {
 				numberOfPoints++;
 				lineRender.SetVertexCount (numberOfPoints);
@@ -36,14 +31,22 @@ public class mover : MonoBehaviour {
 				mousePos.z = 1.0f;
 				Vector3 worldPos = Camera.main.ScreenToWorldPoint (mousePos);
 				lineRender.SetPosition (numberOfPoints - 1, worldPos);
-			} else {
+			} 
+			if(Input.touchCount == 0) {
 				numberOfPoints = 0;
 				lineRender.SetVertexCount (0);
 			}
 
 		}
-		if (col.gameObject.name == "Moneda2") {
-			Debug.Log(col.gameObject.name);
+	
+	}
+
+	void OnTriggerEnter2D (Collider2D col)
+	{
+		Debug.Log ("tocando 2d");
+		if (col.gameObject.name == "Moneda1") {
+			toca=true;
 		}
+
 	}
 }
