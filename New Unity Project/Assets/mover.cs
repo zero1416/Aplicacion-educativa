@@ -6,7 +6,7 @@ public class mover : MonoBehaviour {
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
 	public GameObject nodo3;
-	bool nodo1, nodo2, nodoo3, ganar;
+	bool nodo1, nodo2, nodoo3, ganar, guia1, guia2;
 
 
 
@@ -16,6 +16,8 @@ public class mover : MonoBehaviour {
 		nodo2 = false;
 		nodoo3 = false;
 		ganar = false;
+		guia1 = false;
+		guia2 = false;
 	}
 	
 	// Update is called once per frame
@@ -27,12 +29,17 @@ public class mover : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
+		if (nodo1 == true && nodo2 == true && nodoo3 == true) {
+			ganar= true;
+		}
+
 		switch(dedito.phase){
 			case TouchPhase.Began:
 
 			break;
 			case TouchPhase.Moved:
-			if (nodo1 == true) {
+			if(nodo1 == true && ganar== false) {
+
 				if (Input.GetKey (KeyCode.Mouse0)) {
 					numberOfPoints++;
 					lineRender.SetVertexCount (numberOfPoints);
@@ -42,7 +49,7 @@ public class mover : MonoBehaviour {
 					Vector3 worldPos = Camera.main.ScreenToWorldPoint (mousePos);
 					lineRender.SetPosition (numberOfPoints - 1, worldPos);
 				}
-				if(nodo1 == true && nodo2 == true)
+				if(nodo2== true&& nodo1== true)
 				{
 					nodo3.SetActive(true);
 				}
@@ -50,16 +57,13 @@ public class mover : MonoBehaviour {
 			}
 			break;
 			case TouchPhase.Ended:
-				if(nodo1== false || nodo2== false)
+			if(nodo2 == false|| nodoo3== false)
 				{
 					numberOfPoints = 0;
 					lineRender.SetVertexCount (0);
 				}
-				if( nodo1== true && nodo2== true && nodoo3== true)
-				{
-				ganar= true;
-				this.transform.
-				}
+
+
 			break;
 
 		}
@@ -71,17 +75,28 @@ public class mover : MonoBehaviour {
 		Debug.Log ("tocando 2d");
 		if (col.gameObject.name == "Moneda1") {
 			nodo1 = true;
-		}
+			}
 		if (col.gameObject.name == "Moneda2") {
 			nodo2 = true;
-		}
+		} 
 		if (col.gameObject.name == "Moneda3") {
-			nodoo3= true;
+			nodoo3 = true;
 		}
+		if (col.gameObject.name == "guia1") {
+			guia1 = true;
+		}
+		if (col.gameObject.name == "guia2") {
+			guia2 = true;
+		} 
 
 	}
 	void OnTriggerExit2D(Collider2D col)
 	{
+		if (nodo1 == false) {
+		if(col.gameObject.name== "moneda2"){
+				nodo2=false ;
+			}
+		}
 
 	}
 }
