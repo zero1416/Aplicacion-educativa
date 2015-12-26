@@ -5,7 +5,7 @@ public class mover : MonoBehaviour {
 
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
-	public GameObject nodo3;
+	public GameObject gnodo1,gnodo2,gnodo3, win1, win2;
 	bool nodo1, nodo2, nodoo3, ganar, guia1, guia2;
 
 
@@ -29,12 +29,18 @@ public class mover : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
-		if (nodo1 == true && nodo2 == true && nodoo3 == true) {
+		if (nodo1 == true && nodo2 == true && nodoo3 == true && numberOfPoints!=0) {
+
 			ganar= true;
+			win1.SetActive(true);
+			win2.SetActive(true);
+			win1.GetComponent<AudioSource>().Play();
 		}
 
 		switch(dedito.phase){
 			case TouchPhase.Began:
+
+
 
 			break;
 			case TouchPhase.Moved:
@@ -51,7 +57,7 @@ public class mover : MonoBehaviour {
 				}
 				if(nodo2== true&& nodo1== true)
 				{
-					nodo3.SetActive(true);
+					gnodo3.SetActive(true);
 				}
 				
 			}
@@ -93,8 +99,19 @@ public class mover : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D col)
 	{
 		if (nodo1 == false) {
-		if(col.gameObject.name== "moneda2"){
+		if(col.gameObject.name == "Moneda2"){
 				nodo2=false ;
+			}
+			if(col.gameObject.name=="guia1")
+			{
+				guia1= false;
+			}
+		}
+		if (col.gameObject.name == "guia1") {
+			if(guia2!=true)
+			{
+			numberOfPoints = 0;
+			lineRender.SetVertexCount (0);
 			}
 		}
 
