@@ -16,6 +16,7 @@ public class Moneda1 : MonoBehaviour {
 	void OnMouseDown()
 	{
 		pressed = true;
+		Debug.Log ("Hola mundo");
 		
 	}
 

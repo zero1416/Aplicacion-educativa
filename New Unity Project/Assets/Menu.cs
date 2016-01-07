@@ -46,5 +46,14 @@ public class Menu : MonoBehaviour {
 	{
 		Application.LoadLevel ("Seleccionar");
 	}
+	public void Creditos()
+	{
+		Application.LoadLevel ("Creditos");
+	}
+	public void Secreto()
+	{
+
+		Application.LoadLevel ("Secreto");
+	}
 
 }
