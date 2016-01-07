@@ -32,7 +32,7 @@ public class Menu : MonoBehaviour {
 	}
 	public void Numeros()
 	{
-		Application.LoadLevel ("Numeros");
+		Application.LoadLevel ("Uno");
 	}
 	public void Figuras()
 	{

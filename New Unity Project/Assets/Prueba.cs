@@ -5,12 +5,17 @@ public class Prueba : MonoBehaviour {
 
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
-	bool tocar, nodo1, ganar;
+	public GameObject pantalla;
+	bool tocar, ganar;
+	bool nodo1, nodo2, nodo3;
 
 	// Use this for initialization
 	void Start () {
 		tocar = false;
 		nodo1 = false;
+		nodo2 = false;
+		nodo3 = false;
+		ganar = false;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +25,7 @@ public class Prueba : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
-		if (Input.GetKey (KeyCode.Mouse0) && tocar == true && nodo1 == true) {
+		if (Input.GetKey (KeyCode.Mouse0) && tocar == true && nodo1 == true && ganar== false) {
 			numberOfPoints++;
 			lineRender.SetVertexCount (numberOfPoints);
 			Vector3 mousePos = new Vector3 (0, 0, 0);
@@ -33,6 +38,14 @@ public class Prueba : MonoBehaviour {
 			numberOfPoints = 0;
 			lineRender.SetVertexCount (0);
 		}
+		if (nodo1 == true && nodo2 == true && nodo3 == true) {
+			ganar = true;
+			pantalla.SetActive(true);
+			pantalla.GetComponent<AudioSource>().Play();
+		}
+
+
+
 	
 	}
 
@@ -44,9 +57,20 @@ public class Prueba : MonoBehaviour {
 		if (col.gameObject.name == "Nodo1") {
 			nodo1 = true;
 		}
+		if (col.gameObject.name == "Nodo2") {
+			if(nodo1== true)
+			nodo2 = true;
+		}
+		if (col.gameObject.name == "Nodo3") {
+			if(nodo2 ==true)
+			nodo3 = true;
+		}
 		if (col.gameObject.name == "Menu")
 		{
 			Application.LoadLevel("Seleccionar");
+		}
+		if (col.gameObject.name == "Next") {
+			Application.LoadLevel("Numeros");
 		}
 	}
 	void OnTriggerExit2D(Collider2D col)
