@@ -25,7 +25,7 @@ public class Prueba : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
-		if (Input.GetKey (KeyCode.Mouse0) && tocar == true && nodo1 == true && ganar== false) {
+		if (Input.GetKey (KeyCode.Mouse0)) {
 			numberOfPoints++;
 			lineRender.SetVertexCount (numberOfPoints);
 			Vector3 mousePos = new Vector3 (0, 0, 0);
