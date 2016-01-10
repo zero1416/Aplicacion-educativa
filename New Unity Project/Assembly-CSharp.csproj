@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Algo.cs" />
+     <Compile Include="Assets\C.cs" />
      <Compile Include="Assets\Circulo.cs" />
      <Compile Include="Assets\ControI.cs" />
      <Compile Include="Assets\Cuadrado.cs" />
@@ -53,9 +54,12 @@
      <Compile Include="Assets\Letras.cs" />
      <Compile Include="Assets\M.cs" />
      <Compile Include="Assets\Menu.cs" />
+     <Compile Include="Assets\N.cs" />
      <Compile Include="Assets\Prueba.cs" />
+     <Compile Include="Assets\S.cs" />
      <Compile Include="Assets\Triangulo.cs" />
      <Compile Include="Assets\V.cs" />
+     <Compile Include="Assets\Z.cs" />
      <Compile Include="Assets\mover.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
