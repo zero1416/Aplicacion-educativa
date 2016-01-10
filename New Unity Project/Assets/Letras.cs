@@ -4,7 +4,7 @@ using System.Collections;
 public class Letras : MonoBehaviour {
 	public LineRenderer lineRender;
 	private int numberOfPoints = 0;
-	bool let, ganar;
+	bool figura, ganar;
 	bool nodo1, nodo2, nodo3;
 	public GameObject n1, n2, n3, bm, bn, win;
 	Vector2 mp, np;
@@ -12,7 +12,7 @@ public class Letras : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		let = false;
+		figura = false;
 		ganar = false;
 		nodo1 = false;
 		nodo2 = false;
@@ -30,7 +30,7 @@ public class Letras : MonoBehaviour {
 			Vector2 worlpos=Camera.main.ScreenToWorldPoint(dedito.position);
 			transform.position=worlpos;
 		}
-		if (Input.GetKey (KeyCode.Mouse0)&& let == true && ganar == false && nodo1 == true) {
+		if (Input.GetKey (KeyCode.Mouse0)&& figura == true && ganar == false && nodo1 == true) {
 			numberOfPoints++;
 			lineRender.SetVertexCount (numberOfPoints);
 			Vector3 mousePos = new Vector3 (0, 0, 0);
@@ -39,7 +39,7 @@ public class Letras : MonoBehaviour {
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint (mousePos);
 			lineRender.SetPosition (numberOfPoints - 1, worldPos);
 		}
-		if (let == false) {
+		if (figura == false) {
 			numberOfPoints = 0;
 			lineRender.SetVertexCount (0);
 		}
@@ -66,8 +66,8 @@ public class Letras : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.name == "Letra") {
-			let = true;
+		if (col.gameObject.name == "Figura") {
+			figura = true;
 		}
 		if (col.gameObject.name == "Nodo1") {
 			nodo1= true;
@@ -81,13 +81,18 @@ public class Letras : MonoBehaviour {
 		if (col.gameObject.name == "Menu") {
 			Application.LoadLevel("Seleccionar");
 		}
+		if (col.gameObject.name == "Next") {
+			Application.LoadLevel("M");
+		}
+		
+
 		
 	}
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.gameObject.name == "Letra") {
-			let=false;
+		if (col.gameObject.name == "Figura") {
+			figura=false;
 		}
 	}
 }

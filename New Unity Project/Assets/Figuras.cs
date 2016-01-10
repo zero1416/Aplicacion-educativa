@@ -98,6 +98,9 @@ public class Figuras : MonoBehaviour {
 		if (col.gameObject.name == "Menu") {
 			Application.LoadLevel("Seleccionar");
 		}
+		if (col.gameObject.name == "Next") {
+			Application.LoadLevel("Circulo");
+		}
 
 	}
 

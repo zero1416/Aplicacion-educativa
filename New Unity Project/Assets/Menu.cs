@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour {
 	}
 	public void Figuras()
 	{
-		Application.LoadLevel ("Figuras");
+		Application.LoadLevel ("Cuadrado");
 	}
 	public void Opciones()
 	{

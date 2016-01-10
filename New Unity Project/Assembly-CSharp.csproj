@@ -46,24 +46,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Algo.cs" />
+     <Compile Include="Assets\Circulo.cs" />
      <Compile Include="Assets\ControI.cs" />
-     <Compile Include="Assets\Elefante.cs" />
+     <Compile Include="Assets\Cuadrado.cs" />
      <Compile Include="Assets\Figuras.cs" />
      <Compile Include="Assets\Letras.cs" />
+     <Compile Include="Assets\M.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\Prueba.cs" />
+     <Compile Include="Assets\Triangulo.cs" />
+     <Compile Include="Assets\V.cs" />
      <Compile Include="Assets\mover.cs" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
