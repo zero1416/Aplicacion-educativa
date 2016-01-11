@@ -47,20 +47,37 @@
   <ItemGroup>
      <Compile Include="Assets\Algo.cs" />
      <Compile Include="Assets\C.cs" />
+     <Compile Include="Assets\Cero.cs" />
+     <Compile Include="Assets\Cinco.cs" />
      <Compile Include="Assets\Circulo.cs" />
      <Compile Include="Assets\ControI.cs" />
      <Compile Include="Assets\Cuadrado.cs" />
+     <Compile Include="Assets\Cuatro.cs" />
+     <Compile Include="Assets\Dos.cs" />
      <Compile Include="Assets\Figuras.cs" />
      <Compile Include="Assets\Letras.cs" />
      <Compile Include="Assets\M.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\N.cs" />
+     <Compile Include="Assets\Nueve.cs" />
+     <Compile Include="Assets\Ocho.cs" />
      <Compile Include="Assets\Prueba.cs" />
+     <Compile Include="Assets\Rombo.cs" />
      <Compile Include="Assets\S.cs" />
+     <Compile Include="Assets\Seis.cs" />
+     <Compile Include="Assets\Siete.cs" />
+     <Compile Include="Assets\Tres.cs" />
      <Compile Include="Assets\Triangulo.cs" />
+     <Compile Include="Assets\Uno.cs" />
      <Compile Include="Assets\V.cs" />
      <Compile Include="Assets\Z.cs" />
+     <Compile Include="Assets\e.cs" />
+     <Compile Include="Assets\h.cs" />
+     <Compile Include="Assets\i.cs" />
+     <Compile Include="Assets\j.cs" />
+     <Compile Include="Assets\l.cs" />
      <Compile Include="Assets\mover.cs" />
+     <Compile Include="Assets\w.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

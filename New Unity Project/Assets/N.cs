@@ -93,6 +93,9 @@ public class N : MonoBehaviour {
 		if (col.gameObject.name == "Next") {
 			Application.LoadLevel("C");
 		}
+		if (col.gameObject.name == "Minusculas") {
+			Application.LoadLevel("e");
+		}
 		
 	}
 	

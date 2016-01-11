@@ -84,6 +84,10 @@ public class Letras : MonoBehaviour {
 		if (col.gameObject.name == "Next") {
 			Application.LoadLevel("M");
 		}
+		if (col.gameObject.name == "Minusculas") {
+			Application.LoadLevel("e");
+		}
+
 		
 
 		
