@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Tres.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Rebota\Assets\Barra.cs">
     <Files>
-      <File FileName="Assets\Cuatro.cs" Line="97" Column="28" />
-      <File FileName="Assets\Tres.cs" Line="102" Column="28" />
+      <File FileName="..\..\Rebota\Assets\Barra.cs" Line="16" Column="30" />
+      <File FileName="Assets\Z.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
